@@ -19,6 +19,7 @@
     </licenses>
     
     <!-- Profiles configuration -->
+<settings>
     <profiles>
         <!-- The configuration of the development profile -->
         <profile>
@@ -38,7 +39,7 @@
             </properties>
         </profile>
        </profiles> 
-        
+	</settings>
 
     <build>
         
