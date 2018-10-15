@@ -18,30 +18,7 @@
         </license>
     </licenses>
     
-    <!-- Profiles configuration -->
-<settings>
-    <profiles>
-        <!-- The configuration of the development profile -->
-        <profile>
-            <id>dev</id>
-            <!-- The development profile is active by default -->
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <!--
-                    Specifies the build.profile.id property that must be equal than the name of
-                    the directory that contains the profile specific configuration file.
-                    Because the name of the directory that contains the configuration file of the
-                    development profile is dev, we must set the value of the build.profile.id property to dev.
-                -->
-                <build.profile.id>dev</build.profile.id>
-            </properties>
-        </profile>
-       </profiles> 
-	</settings>
-
-    <build>
+	<build>
         
          <finalName>maven-properties-filtering</finalName>
         <filters>
