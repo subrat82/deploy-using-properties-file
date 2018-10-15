@@ -17,8 +17,51 @@
             <comments>none</comments>
         </license>
     </licenses>
+    
+    <!-- Profiles configuration -->
+    <profiles>
+        <!-- The configuration of the development profile -->
+        <profile>
+            <id>dev</id>
+            <!-- The development profile is active by default -->
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!--
+                    Specifies the build.profile.id property that must be equal than the name of
+                    the directory that contains the profile specific configuration file.
+                    Because the name of the directory that contains the configuration file of the
+                    development profile is dev, we must set the value of the build.profile.id property to dev.
+                -->
+                <build.profile.id>dev</build.profile.id>
+            </properties>
+        </profile>
+        
+        
 
     <build>
+        
+         <finalName>maven-properties-filtering</finalName>
+        <filters>
+            <!--
+                Ensures that the config.properties file is always loaded from the
+		        configuration directory of the active Maven profile. 
+            -->
+            <filter>profiles/${build.profile.id}/config.properties</filter>
+        </filters>
+        <resources>
+            <!--
+                Placeholders that are found from the files located in the configured resource
+                directories are replaced with the property values found from the profile
+                specific configuration file.
+            -->
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
