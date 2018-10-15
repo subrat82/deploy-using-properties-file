@@ -17,7 +17,7 @@
                     Because the name of the directory that contains the configuration file of the
                     development profile is dev, we must set the value of the build.profile.id property to dev.
                 -->
-                <build.profile.id>dev</build.profile.id>
+                <build-profile-id>dev</build-profile-id>
             </properties>
             
             
