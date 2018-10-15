@@ -1,7 +1,26 @@
 <settings>
     <profiles>
-    <profile>
-        <id>artifactory</id>
+        
+        
+         <!-- Profiles configuration -->
+        <!-- The configuration of the development profile -->
+        <profile>
+            <id>dev</id>
+            <!-- The development profile is active by default -->
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!--
+                    Specifies the build.profile.id property that must be equal than the name of
+                    the directory that contains the profile specific configuration file.
+                    Because the name of the directory that contains the configuration file of the
+                    development profile is dev, we must set the value of the build.profile.id property to dev.
+                -->
+                <build.profile.id>dev</build.profile.id>
+            </properties>
+            
+            
             <properties>
                 <username>admin</username>
                 <password>password</password>
@@ -11,17 +30,9 @@
           <snapshots>
             <enabled>false</enabled>
           </snapshots>
-          <id>central</id>
-          <name>libs-release-local</name>
-          <url>http://ec2-34-226-147-221.compute-1.amazonaws.com:8081/artifactory/libs-release-local</url>
-        </repository>
-        <repository>
-          <snapshots>
-            <enabled>true</enabled>
-          </snapshots>
-          <id>snapshots</id>
-          <name>libs-snapshot-local</name>
-          <url>http://ec2-34-226-147-221.compute-1.amazonaws.com:8081/artifactory/libs-snapshot-local</url>
+          <id>dev</id>
+          <name>libs-release-local-1</name>
+          <url>http://ec2-34-226-147-221.compute-1.amazonaws.com:8081/artifactory/libs-release-local-1</url>
         </repository>
       </repositories>
       <pluginRepositories>
@@ -29,19 +40,13 @@
           <snapshots>
             <enabled>false</enabled>
           </snapshots>
-          <id>central</id>
+          <id>dev</id>
           <name>plugins-release</name>
           <url>http://ec2-34-226-147-221.compute-1.amazonaws.com:8081/artifactory/plugins-release</url>
         </pluginRepository>
-        <pluginRepository>
-          <snapshots />
-          <id>snapshots</id>
-          <name>plugins-snapshot</name>
-          <url>http://ec2-34-226-147-221.compute-1.amazonaws.com:8081/artifactory/plugins-snapshot</url>
-        </pluginRepository>
       </pluginRepositories>
-      <id>artifactory</id>
-    </profile>
+            
+        </profile>
   </profiles>
  
 
