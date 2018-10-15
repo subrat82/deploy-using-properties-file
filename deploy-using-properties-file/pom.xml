@@ -26,7 +26,7 @@
                 Ensures that the config.properties file is always loaded from the
 		        configuration directory of the active Maven profile. 
             -->
-            <filter>profiles/${build.profile.id}/environment.properties</filter>
+            <filter>src/main/resources/environment.properties</filter>
         </filters>
         <resources>
             <!--
